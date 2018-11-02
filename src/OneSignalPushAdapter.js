@@ -75,7 +75,7 @@ export class OneSignalPushAdapter {
       delete data['alert'];
     }
     if(data['title']) {
-      post['title'] = {en: data['title']};
+      post['headings'] = {en: data['title']};
       delete data['title'];
     }
     if(data['subtitle']) {
@@ -131,15 +131,16 @@ export class OneSignalPushAdapter {
     var post = {};
 
     if(data['alert']) {
-      post['contents'] = {en: data['alert']};
+	  let alert = data['alert']
+	  if(data['subtitle']) {
+        alert = data['subtitle'] + String.fromCharCode(10) + alert;
+        delete data['subtitle'];
+      }
+      post['contents'] = {en: alert};
       delete data['alert'];
     }
-    if(data['subtitle']) {
-      post['subtitle'] = {en: data['subtitle']};
-      delete data['subtitle'];
-    }
     if(data['title']) {
-      post['title'] = {en: data['title']};
+      post['headings'] = {en: data['title']};
       delete data['title'];
     }
     if(data['uri']) {
