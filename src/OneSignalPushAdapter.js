@@ -58,6 +58,7 @@ export class OneSignalPushAdapter {
   sendToAPNS(data,tokens) {
 
     data= deepcopy(data['data']);
+    console.log('data adaptater ios', data)
 
     var post = {};
     if(data['badge']) {
@@ -133,6 +134,7 @@ export class OneSignalPushAdapter {
     data= deepcopy(data['data']);
 
     var post = {};
+    console.log('data adaptater And', data)
 
     if(data['alert']) {
 	  let alert = data['alert']
@@ -194,6 +196,8 @@ export class OneSignalPushAdapter {
   }
 
   sendToOneSignal(data, cb) {
+        console.log('data adaptater sendToOneSignal', data)
+
     let headers = {
       "Content-Type": "application/json",
       "Authorization": "Basic "+this.OneSignalConfig['apiKey']
