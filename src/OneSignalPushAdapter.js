@@ -82,6 +82,10 @@ export class OneSignalPushAdapter {
       post['subtitle'] = {en: data['subtitle']};
       delete data['subtitle'];
     }
+    if(data['send_after']) {
+      post['send_after'] = data['send_after'];
+      delete data['send_after'];
+    }
     if(data['sound']) {
       post['ios_sound'] = data['sound'];
       delete data['sound'];
@@ -142,6 +146,10 @@ export class OneSignalPushAdapter {
     if(data['title']) {
       post['headings'] = {en: data['title']};
       delete data['title'];
+    }
+    if(data['send_after']) {
+      post['send_after'] = data['send_after'];
+      delete data['send_after'];
     }
     if(data['uri']) {
       post['url'] = data['uri'];
