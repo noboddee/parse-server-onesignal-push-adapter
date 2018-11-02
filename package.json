@@ -2,10 +2,9 @@
   "name": "parse-server-onesignal-push-adapter",
   "version": "1.0.0",
   "description": "One Signal push adapter for parse-server",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "files": [
-    "lib/",
-    "src/"
+    "lib/"
   ],
   "scripts": {
     "build": "babel src/ -d lib/",
